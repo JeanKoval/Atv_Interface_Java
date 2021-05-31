@@ -19,7 +19,7 @@ public class Main {
 		while(op != 0) {
 			do {
 				
-				System.out.println("Para calcular a Área e o Perimetro, escolha uma das Figuras:");
+				System.out.println("\nPara calcular a Área e o Perimetro, escolha uma das Figuras:");
 				System.out.println("1 - Triangulo");
 				System.out.println("2 - Retangulo");
 				System.out.println("3 - Quadrado");
@@ -29,11 +29,11 @@ public class Main {
 				System.out.print("Qual sua opção: ");
 				op = scan.nextInt();
 				
-				if(op<1 || op>4) {
+				if(op<0 || op>4) {
 					
 					System.out.println("\nOpção invalida, por favor tente novamente!\n");
 				}
-			}while(op<1 || op>4);
+			}while(op<0 || op>4);
 			
 			switch(op) {
 				case 1:
@@ -112,10 +112,9 @@ public class Main {
 				System.out.println("Deseja calcular mais alguma figura? 1 para SIM e 0 para NÃO");
 				System.out.print("Escolha: ");
 				op = scan.nextInt();
-				System.out.println();
 			}
 		};
-		System.out.println("Programa encerrado.");
+		System.out.println("\nPrograma encerrado.");
 
 	}
 
