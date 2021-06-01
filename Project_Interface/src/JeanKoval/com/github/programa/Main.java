@@ -7,6 +7,7 @@ import JeanKoval.com.github.classes.Circulo;
 import JeanKoval.com.github.classes.Quadrado;
 import JeanKoval.com.github.classes.Retangulo;
 import JeanKoval.com.github.classes.Triangulo;
+import JeanKoval.com.github.interfaces.FiguraGeometrica;
 
 public class Main {
 
@@ -31,7 +32,7 @@ public class Main {
 				
 				if(op<0 || op>4) {
 					
-					System.out.println("\nOpção invalida, por favor tente novamente!\n");
+					System.out.println("\nOpção invalida, por favor tente novamente!");
 				}
 			}while(op<0 || op>4);
 			
@@ -39,22 +40,26 @@ public class Main {
 				case 1:
 					ArrayList<Float> lados = new ArrayList<Float>();
 					Float lado;
+					
 					System.out.println("\nVamos calcular um Triangulo, para isso");
+					
 					for(int i =0; i < 3; i++) {
 						System.out.print("Digite o "+(i+1)+" lado: ");
 						lado = scan.nextFloat();
 						lados.add(lado);
 					}
+					
 					System.out.print("Digite a altura: ");
 					altura = scan.nextFloat();
 					
 					System.out.print("Digite a base: ");
 					base = scan.nextFloat();
 					
-					Triangulo trian = new Triangulo(lados.get(0), lados.get(1), lados.get(2), base, altura);
+					FiguraGeometrica trian = new Triangulo(lados.get(0), lados.get(1), lados.get(2), base, altura);
 					
 					System.out.println();
 					trian.calArea();
+					
 					System.out.println();
 					trian.calPerimetro();
 					
@@ -69,12 +74,14 @@ public class Main {
 					System.out.print("Digite a base: ");
 					base = scan.nextFloat();
 					
-					Retangulo retan = new Retangulo(base, altura);
+					FiguraGeometrica retan = new Retangulo(base, altura);
 					
 					System.out.println();
 					retan.calArea();
+					
 					System.out.println();
 					retan.calPerimetro();
+					
 					System.out.println("____________________________________________________\n");
 					
 					break;
@@ -83,12 +90,14 @@ public class Main {
 					System.out.print("Digite o valor dos lados: ");
 					Float ladosQua = scan.nextFloat();
 					
-					Quadrado quadrado = new Quadrado(ladosQua);
+					FiguraGeometrica quadrado = new Quadrado(ladosQua);
 					
 					System.out.println();
 					quadrado.calArea();
+					
 					System.out.println();
 					quadrado.calPerimetro();
+					
 					System.out.println("____________________________________________________\n");
 					
 					break;
@@ -97,12 +106,14 @@ public class Main {
 					System.out.print("Digite o valor do raio: ");
 					Float raio = scan.nextFloat();
 					
-					Circulo circulo = new Circulo(raio);
+					FiguraGeometrica circulo = new Circulo(raio);
 					
 					System.out.println();
 					circulo.calArea();
+					
 					System.out.println();
 					circulo.calPerimetro();
+					
 					System.out.println("____________________________________________________\n");
 					
 					break;
@@ -115,6 +126,8 @@ public class Main {
 			}
 		};
 		System.out.println("\nPrograma encerrado.");
+		
+		scan.close();
 
 	}
 
