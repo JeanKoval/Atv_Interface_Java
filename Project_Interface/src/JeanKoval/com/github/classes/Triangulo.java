@@ -12,10 +12,10 @@ public class Triangulo implements FiguraGeometrica {
 	private Float perimetro;
 
 	public Triangulo(Float lado1, Float lado2, Float lado3, Float base, Float altura) {
-		this.lado1 = lado1;
-		this.lado2 = lado2;
-		this.lado3 = lado3;
-		this.base = base;
+		this.lado1  = lado1;
+		this.lado2  = lado2;
+		this.lado3  = lado3;
+		this.base   = base;
 		this.altura = altura;
 	}
 

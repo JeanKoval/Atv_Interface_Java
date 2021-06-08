@@ -3,10 +3,7 @@ package JeanKoval.com.github.programa;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import JeanKoval.com.github.classes.Circulo;
-import JeanKoval.com.github.classes.Quadrado;
-import JeanKoval.com.github.classes.Retangulo;
-import JeanKoval.com.github.classes.Triangulo;
+import JeanKoval.com.github.classes.*;
 import JeanKoval.com.github.interfaces.FiguraGeometrica;
 
 public class Main {
@@ -87,10 +84,13 @@ public class Main {
 					break;
 				case 3:
 					System.out.println("\nVamos calcular um Quadrado, para isso");
-					System.out.print("Digite o valor dos lados: ");
-					Float ladosQua = scan.nextFloat();
+					System.out.print("Digite a altura: ");
+					altura = scan.nextFloat();
 					
-					FiguraGeometrica quadrado = new Quadrado(ladosQua);
+					System.out.print("Digite a base: ");
+					base = scan.nextFloat();
+					
+					FiguraGeometrica quadrado = new Quadrado(base, altura);
 					
 					System.out.println();
 					quadrado.calArea();

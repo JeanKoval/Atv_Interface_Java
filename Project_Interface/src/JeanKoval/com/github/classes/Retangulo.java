@@ -2,34 +2,45 @@ package JeanKoval.com.github.classes;
 
 import JeanKoval.com.github.interfaces.FiguraGeometrica;
 
-public class Retangulo implements FiguraGeometrica {
-	public Float base;
-	public Float altura;
-	public Float area;
-	public Float perimetro;
-		
+public class Retangulo extends Quadrilatero implements FiguraGeometrica {
+	
 	public Retangulo(Float base, Float altura) {
-		this.base = base;
-		this.altura = altura;
+		setBase(base);
+		setAltura(altura);
 	}
 
 	@Override
 	public void calArea() {
-		this.area = (this.base*this.altura);
+		setArea(getBase()*getAltura());
 		
 		System.out.println("A Área do Retangulo com");
-		System.out.println("Base: "+ this.base +" Altura: "+ this.altura);
-		System.out.println("É igual a "+ this.area);
+		System.out.println("Base: "+ getBase() +" Altura: "+ getAltura());
+		System.out.println("É igual a "+ getArea());
 	}
 	
 	@Override
-	public void calPerimetro() {
-		this.perimetro = (this.base+this.altura);
-		this.perimetro = this.perimetro*2;
+	public void calPerimetro() {		
+		setPerimetro( (getBase()+getAltura()) * 2);
 		
 		System.out.println("A Perimetro do Retangulo com");
-		System.out.println("Base: "+ this.base +" Altura: "+ this.altura);
-		System.out.println("É igual a "+ this.perimetro);
-		
+		System.out.println("Base: "+ getBase() +" Altura: "+ getAltura());
+		System.out.println("É igual a "+ getPerimetro());		
 	}
+	
+	@Override
+	public void setBase(Float base) {
+		if ( getAltura() != null && getAltura().equals(base)) {
+			throw new RuntimeException("Base não pode ser igual a Altura");
+		}
+		this.base = base;
+	}
+	
+	@Override
+	public void setAltura(Float altura) {
+		if ( getBase() != null && getBase().equals(altura)) {
+			throw new RuntimeException("Base não pode ser igual a Altura");
+		}
+		this.altura = altura;
+	}
+
 }
